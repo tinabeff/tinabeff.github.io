@@ -13,17 +13,23 @@
     <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
     
     <!-- Weather Icons -->
-   <!-- <link href="bower_components/weather-icons/css/weather-icons.min.css" rel="stylesheet">-->
+    <link href="bower_components/weather-icons/css/weather-icons.min.css" rel="stylesheet">
 </head>
 
 <body>
     <script id='postTemplate' type='text/x-jquery-tmpl'>
-        <div class="col-md-12 text-center" style="background: #FF2080; color: #FFF; padding: 30px; font-size: 10em;">
-            <h4 class="media-heading">${celsius} ℃</h4>
-            <h2><i class="wi ${weatherIcon}"></i></h2>
+        <div class="col-md-4 col-md-offset-4 text-center" style="background: #ff2080; color: #fff; padding: 30px;>
+            <p style="font-size: 3em;">${celsius} ℃</p>
+            <i class="wi ${weatherIcon}" style="font-size: 3em;"></i>
         </div>
     </script>
 
+    <script id='chatTemplate' type='text/x-jquery-tmpl'>
+        <div class="col-md-4 col-md-offset-4 text-center" style="background: #8020ff; color: #fff; padding: 30px;>
+            <p style="font-size: 1.2em;">${message} ℃</p>
+        </div>
+    </script>
+    
     <div class="container">
         <div class="row" id="content">
         </div>
@@ -31,10 +37,11 @@
     <!-- /.container -->
 
     <!-- JavaScript -->
-    <script src="/booklog/javascripts/jquery.min.js"></script>
-    <script src="/booklog/javascripts/bootstrap.min.js"></script>
-	<script src='/booklog/javascripts/jquery-tmpl/jquery.tmpl.min.js'></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+	<script src='js/jquery-tmpl/jquery.tmpl.min.js'></script>
 	<script src='js/weather.js'></script>
+    <script src='js/chat.js'></script>
 </body>
 
 </html>

@@ -15,7 +15,7 @@
             }
             
             // Celsius
-            obj.celsius = response.main.temp - 273.15;
+            obj.celsius = parseInt(response.main.temp - 273.15);
             
             
             data.push(obj);
