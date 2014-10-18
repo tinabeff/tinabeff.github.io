@@ -7,31 +7,34 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Four Column Portfolio Template for Bootstrap 3</title>
+    <title>Weather</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="stylesheets/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Weather Icons -->
+    <link href="bower_components/weather-icons/css/weather-icons.min.css" rel="stylesheet">
 </head>
 
 <body>
-<script id='postTemplate' type='text/x-jquery-tmpl'>
-            <div class="col-md-4 portfolio-item">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive dp img-circle" src="http://lorempixel.com/180/180/">
-                </a>
-	                <h4 class="media-heading">${name}</h4>
-                    ${weather.icon}
-	                <h5>${weather.main}</h5>
-                    <h5>${weather.description}</h5>
-                    <h5>${wind.speed}</ht>
-                    <h5>${main.temp}</ht>
-	                <button id="subject" data-id="${id}" class="btn btn-success">Read More</button>
-            </div>
-</script>
+    <script id='postTemplate' type='text/x-jquery-tmpl'>
+        <div class="col-md-12 text-center" style="background: #FF2080; color: #FFF; padding: 30px; font-size: 10em;">
+            <h4 class="media-heading">${celsius} ℃</h4>
+            <h2><i class="wi ${weatherIcon}"></i></h2>
+        </div>
+    </script>
 
+    <div class="container">
+        <div class="row" id="content">
+        </div>
+    </div>
+    <!-- /.container -->
 
     <!-- JavaScript -->
-    <script src="/booklog/javascripts/jquery.min.js"></script>
-    <script src="/booklog/javascripts/bootstrap.min.js"></script>
-	<script src='/booklog/javascripts/jquery-tmpl/jquery.tmpl.min.js'></script>
-	<script src='js/weather.js'></script>
+    <script src="javascripts/jquery.min.js"></script>
+    <script src="javascripts/bootstrap.min.js"></script>
+	<script src='javascripts/jquery-tmpl/jquery.tmpl.min.js'></script>
+	<script src='javascripts/main.js?v=0.1'></script>
 </body>
 
 </html>
