@@ -1,6 +1,6 @@
 
 (function() {
-    $.fn.createWebSocket = function() {
+    $.fn.createWebSocket = function(msgVal) {
         var self = this;
         var ws = new WebSocket("ws://zero-manila.codio.io:3000/", "echo-protocol"); 
         ws.onopen = function(evt) {
@@ -20,6 +20,9 @@
 			$('#chatTemplate')
 				.tmpl(messages.reverse().slice(0, 1))
 				.appendTo(self);  
+            if (msgVal && msgVal.onmessage === 'function') {
+                msgVal.onmessage();
+            }
         };    
     }; 
 }) ();
