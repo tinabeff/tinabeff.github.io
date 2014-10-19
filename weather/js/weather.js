@@ -1,5 +1,5 @@
 (function($) {
-    $('#send').click(function(){
+    $('#send').on('click',function(){
        alert("you got me") ;
     });
 	$.ajax({
