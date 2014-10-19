@@ -13,6 +13,12 @@ var discussion = require('./routes/discussion');
 var chat = require('./routes/chat');
 var cors = require('cors');
 
+//20141019modify
+var WebSocketServer = require('websocket').server;
+var WebSocketClient = require('cors').client;
+var WebSocketFrame = require('cors').frame;
+var WebSocketRouter = require('cors').router;
+
 var app = express();
 
 // all environments
@@ -43,6 +49,33 @@ app.get('/discussion/latest/:items', discussion.read);
 app.get('/start', cors(), chat.start);
 app.post('/send/:message', cors(), chat.send);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+var server=http.createServer(onRequest).listen(app.get('port'),function(){
+   console.log('Express server listening on port ' + app.get('port')); 
 });
+
+var wsServer=new WebSocketServer({
+    httpServer:server,
+    autoAcceptConnection:false
+});
+
+function onWsConnMsg(msg){
+    if(msg.type=='utf-8'){
+        console.log('Received message: ' + message.utf8Data);
+    }   else if(message.type == 'binary'){
+        console.log('Received binary data.');
+    }     
+}
+
+function connClose(){
+  console.log(' Connection close: ' + reasonCode);    
+}
+
+function connRequest(){
+    var conn=request.accept('echo-protool',request.origin);
+  console.log("Connection accepted.");
+
+  connection.on('message', onWsConnMessage);
+  connection.on('close', connClose);
+}
+
+wsServer.on('request',connRequest);
