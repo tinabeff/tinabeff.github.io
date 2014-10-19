@@ -39,11 +39,11 @@
             $(document).createWebSocket({
                 onmsg:function(){
                     $('.timestamp').each(function() {
-                var me = $(this);
-                var timestamp = me.html();
+                        var me = $(this);
+                        var timestamp = me.html();
 
-                me.html(moment(timestamp).fromNow());
-            });
+                        me.html(moment(timestamp).fromNow());
+                    });
                 }  
             });
 	    }
