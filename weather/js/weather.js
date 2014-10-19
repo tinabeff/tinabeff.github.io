@@ -1,4 +1,7 @@
 (function($) {
+    $('#send').click(function(){
+       alert("you got me") ;
+    });
 	$.ajax({
 		dataType: 'json',
 		url: 'http://api.openweathermap.org/data/2.5/weather?q=Taipei',
