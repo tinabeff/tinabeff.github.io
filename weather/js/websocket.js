@@ -1,4 +1,4 @@
-(functioin(){  
+(function(){  
     $.fn.createWebSocket=function(){    
         var ws = new WebSocket("ws://zero-manila.codio.io:3000/", "echo-protocol"); 
         ws.onopen = function(evt) {
