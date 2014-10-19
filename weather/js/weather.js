@@ -17,7 +17,6 @@
 //                 me.html(moment(timestamp).fromNow());
 //             });
 // 	    }
-	});
     });
 	$.ajax({
 		dataType: 'json',
