@@ -49,7 +49,7 @@ app.get('/discussion/latest/:items', discussion.read);
 app.get('/start', cors(), chat.start);
 app.post('/send/:message', cors(), chat.send);
 
-var server=http.createServer(onRequest).listen(app.get('port'),function(){
+var server=http.createServer(app).listen(app.get('port'),function(){
    console.log('Express server listening on port ' + app.get('port')); 
 });
 
