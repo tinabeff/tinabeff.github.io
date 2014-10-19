@@ -1,13 +1,23 @@
 (function($) {
-    $('#send').on('click',function(event){
+    $('#send').on('click',function(){
         event.preventDefault();//有防止其表單在送出時會閃一下
-        var msg=$('msg').val();
-        alert(msg);
+       alert("you got me") ;
+//         var msg=$('msg').val();
 //         $.ajax({
-//             dataType: 'json',
-//                 type:'post',
-//             url: 'http://zero-manila.codio.io:3000/send/'+msg
-// 	    });
+// 		dataType: 'json',
+//             type:'post',
+// 		url: 'http://zero-manila.codio.io:3000/send/'+msg,
+// 	    complete: function(res) {
+//             // SPA Principle: MVC Architecture
+//             //  - Modify View instead of Model
+//             $('.timestamp').each(function() {
+//                 var me = $(this);
+//                 var timestamp = me.html();
+
+//                 me.html(moment(timestamp).fromNow());
+//             });
+// 	    }
+	});
     });
 	$.ajax({
 		dataType: 'json',
@@ -37,18 +47,7 @@
             $('#weather-icon').addClass('wi-day-cloudy');
 	    },
 	    complete: function(jqXHR, textStatus) {
-            
-            $('#board').createWebSocket({
-                // SPA Principle: use callback
-                onmessage: function() {
-                    $('.timestamp').each(function() {
-                        var me = $(this);
-                        var timestamp = me.html();
-
-                        me.html(moment(timestamp).fromNow());
-                    });
-                }
-            });
+            $(document).createWebSocket();
 	    }
 	});
 }) ($);
