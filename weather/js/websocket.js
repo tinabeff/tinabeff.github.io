@@ -15,7 +15,9 @@
              $('[data-status=error]').removeClass('hide');
         };
         ws.onmessage = function(evt) {
-
+            $('#chatTemplate')
+				.tmpl(evt.data)
+				.appendTo('#content');  
         };    
     }; 
 }) ();
