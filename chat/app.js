@@ -66,11 +66,11 @@ function onWsConnMsg(msg){
     }     
 }
 
-function connClose(){
+function connClose(reasonCode, description){
   console.log(' Connection close: ' + reasonCode);    
 }
 
-function connRequest(){
+function connRequest(request){
     var conn=request.accept('echo-protool',request.origin);
   console.log("Connection accepted.");
 
