@@ -74,7 +74,7 @@ function connRequest(request){
     var conn=request.accept('echo-protocol',request.origin);
   console.log("Connection accepted.");
 
-  conn.on('message', onWsConnMessage);
+  conn.on('message', onWsConnMsg);
   conn.on('close', connClose);
 }
 
