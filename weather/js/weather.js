@@ -1,6 +1,6 @@
 (function($) {
     $('#send').on('click',function(event){
-        event.preventDefault();//有防止其表單在送出時會閃一下
+       // event.preventDefault();//有防止其表單在送出時會閃一下
        alert("you got me") ;
 //         var msg=$('msg').val();
 //         $.ajax({
