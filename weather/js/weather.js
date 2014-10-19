@@ -2,11 +2,12 @@
     $('#send').on('click',function(event){
         event.preventDefault();//有防止其表單在送出時會閃一下
         var msg=$('msg').val();
-        $.ajax({
-            dataType: 'json',
-                type:'post',
-            url: 'http://zero-manila.codio.io:3000/send/'+msg
-	    });
+        alert(msg);
+//         $.ajax({
+//             dataType: 'json',
+//                 type:'post',
+//             url: 'http://zero-manila.codio.io:3000/send/'+msg
+// 	    });
     });
 	$.ajax({
 		dataType: 'json',
