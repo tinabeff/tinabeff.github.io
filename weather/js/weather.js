@@ -36,7 +36,7 @@
             $('#weather-icon').addClass('wi-day-cloudy');
 	    },
 	    complete: function(jqXHR, textStatus) {
-            $(document).createWebSocket({
+             $('#board').createWebSocket({
                 onmsg:function(){
                     $('.timestamp').each(function() {
                         var me = $(this);

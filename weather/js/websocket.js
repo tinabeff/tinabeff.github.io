@@ -20,8 +20,8 @@
 			$('#chatTemplate')
 				.tmpl(messages.reverse().slice(0, 1))
 				.appendTo(self);  
-            if (msgVal && msgVal.onmessage === 'function') {
-                msgVal.onmessage();
+            if (msgVal && msgVal.onmsg === 'function') {
+                msgVal.onmsg();
             }
         };    
     }; 
