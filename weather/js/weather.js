@@ -8,6 +8,7 @@
             url: 'http://zero-manila.codio.io:3000/send/'+msg
         });
     });
+    
 	$.ajax({
 		dataType: 'json',
 		url: 'http://api.openweathermap.org/data/2.5/weather?q=Taipei',
