@@ -71,7 +71,7 @@ function connClose(reasonCode, description){
 }
 
 function connRequest(request){
-    var conn=request.accept('echo-protool',request.origin);
+    var conn=request.accept('echo-protocol',request.origin);
   console.log("Connection accepted.");
 
   connection.on('message', onWsConnMessage);
